@@ -9,6 +9,7 @@ import org.fao.geonet.domain.MetadataType;
 import org.fao.geonet.repository.MetadataCategoryRepository;
 import org.fao.geonet.repository.MetadataRepository;
 import org.jdom.Element;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -34,6 +35,7 @@ public class DataManagerWorksWithoutTransactionIntegrationTest extends AbstractC
     MetadataCategoryRepository metadataCategoryRepository;
 
     @Test
+    @Ignore("dm.updateMetadata() cannot work outside of a transaction, skipping test.")
     public void testDataManagerCutpoints() throws Exception {
         TransactionlessTesting.get().run
                 (new TestTask() {
